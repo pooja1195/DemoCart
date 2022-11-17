@@ -1,14 +1,25 @@
 package Resources;
 
+import java.time.Duration;
 import java.util.Arrays;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import PageObjectModel.IphonePOM;
 
 public class CommonUtlities {
+	public static WebDriver Driver;
 
-//Code to get final Price
+public CommonUtlities(WebDriver driver2) {
+		// TODO Auto-generated constructor stub
+	Driver=driver2;
+	}
+
+	//Code to get final Price
 	public static String pricecapture(WebElement getPrice) {
 	String Mobilep1 = getPrice.getText(); 
 	String[] Mobilep2 = Mobilep1.split("\\n"); //splitted with line
@@ -21,6 +32,9 @@ public class CommonUtlities {
 
 		}
 		
-		
+	public static void waits(By step, int duration) {
+		WebDriverWait wb=new WebDriverWait(Driver,Duration.ofSeconds(duration));
+	    wb.until(ExpectedConditions.presenceOfElementLocated(step));
+	}
 	}
 
