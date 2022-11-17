@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 public class CartTotalPOM {
 	public static WebDriver Driver;
 	
-	private static By clickontotal = By.xpath("//span[@id='cart-total']");
+	public static By clickontotal = By.xpath("//span[@id='cart-total']");
 	private static By gettotalprice = By.xpath("//table[@class='table table-bordered']/tbody/tr[4]/td[2]");
 	
 	public CartTotalPOM(WebDriver driver2) {

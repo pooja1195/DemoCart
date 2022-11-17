@@ -2,11 +2,14 @@ package CartPriceVerify;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.time.Duration;
 import java.util.Arrays;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import PageObjectModel.CartTotalPOM;
 import PageObjectModel.IphonePOM;
@@ -26,7 +29,9 @@ public class CartTotal extends BaseClass{
 		IphonePOM POI = new IphonePOM(Driver);
 		POI.IphoneInput().sendKeys(TestData.IphoneModel);
 		POI.ClickonIphone().click();
-		Thread.sleep(2000);
+		
+		CommonUtlities com = new CommonUtlities(Driver);
+		com.waits(IphonePOM.Iphoneprice, 20);
 
 //To get Price
 		String Iphonep = CommonUtlities.pricecapture(POI.IphonePrice());
@@ -52,7 +57,8 @@ public class CartTotal extends BaseClass{
 		Search.clear();
 		Search.sendKeys(TestData.SamsungModel);
 		POS.Samsungsearch().click();
-		Thread.sleep(2000);
+		
+		com.waits(SamsungPOM.samsungprice, 20);
 		
 //Samsung Price
 		String Samsungp = CommonUtlities.pricecapture(POS.Samsungprice());
@@ -61,7 +67,8 @@ public class CartTotal extends BaseClass{
 		
 //Add to Cart
 		POS.Addsamsungtocart().click();
-		Thread.sleep(2000);
+		
+		com.waits(CartTotalPOM.clickontotal, 20);
 		
 //Total Cart price
 		CartTotalPOM POC = new CartTotalPOM(Driver);

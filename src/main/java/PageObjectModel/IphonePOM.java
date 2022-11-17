@@ -9,7 +9,7 @@ public class IphonePOM {
 	
 	private static  By Iphoneinput = By.xpath("//input[@placeholder='Search']");
 	private static By clickonIphone = By.xpath("//i[@class='fa fa-search']");
-	private static By Iphoneprice = By.xpath("//p[@class='price']");
+	public static By Iphoneprice = By.xpath("//p[@class='price']");
 	private static By Iphoneaddtocart = By.xpath("(//span[@class='hidden-xs hidden-sm hidden-md']/parent::button)[2]");
 	
 	public IphonePOM(WebDriver driver2) {

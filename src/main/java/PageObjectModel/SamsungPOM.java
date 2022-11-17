@@ -9,7 +9,7 @@ public class SamsungPOM {
 	
 	private static By samsunginput = By.xpath("//input[@id='input-search']");
 	private static By samsungsearch = By.xpath("//input[@id='button-search']");
-	private static By samsungprice = By.xpath("(//p[@class='price'])[2]");
+	public static By samsungprice = By.xpath("(//p[@class='price'])[2]");
 	private static By addsamsungtocart = By.xpath("(//i[@class='fa fa-shopping-cart'])[5]/parent::button");
 	
 	public SamsungPOM(WebDriver driver2) {
