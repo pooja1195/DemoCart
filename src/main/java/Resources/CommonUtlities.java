@@ -9,8 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import PageObjectModel.IphonePOM;
-
 public class CommonUtlities {
 	public static WebDriver Driver;
 
@@ -32,9 +30,9 @@ public CommonUtlities(WebDriver driver2) {
 
 		}
 		
-	public static void waits(By step, int duration) {
-		WebDriverWait wb=new WebDriverWait(Driver,Duration.ofSeconds(duration));
-	    wb.until(ExpectedConditions.presenceOfElementLocated(step));
+	public static void waits(By step, int time) {
+		WebDriverWait wb = new WebDriverWait(Driver, Duration.ofSeconds(time));
+		wb.until(ExpectedConditions.visibilityOfElementLocated(step));
 	}
 	}
 

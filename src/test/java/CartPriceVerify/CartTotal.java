@@ -1,15 +1,9 @@
 package CartPriceVerify;
 
 import java.io.IOException;
-import java.text.DecimalFormat;
-import java.time.Duration;
-import java.util.Arrays;
 
-import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import PageObjectModel.CartTotalPOM;
 import PageObjectModel.IphonePOM;
@@ -23,7 +17,6 @@ public class CartTotal extends BaseClass{
 	@Test
 	public void Cartprice() throws IOException, InterruptedException {
 		initializeDriver();
-		app();
 		
 //Iphone Code
 		IphonePOM POI = new IphonePOM(Driver);
@@ -34,7 +27,7 @@ public class CartTotal extends BaseClass{
 		com.waits(IphonePOM.Iphoneprice, 20);
 
 //To get Price
-		String Iphonep = CommonUtlities.pricecapture(POI.IphonePrice());
+		String Iphonep = com.pricecapture(POI.IphonePrice());
 		Double Iphonep4 = Double.parseDouble(Iphonep);
 		System.out.println(Iphonep4);//123.2 - giving value but with 1digit decimal
 		
@@ -61,26 +54,25 @@ public class CartTotal extends BaseClass{
 		com.waits(SamsungPOM.samsungprice, 20);
 		
 //Samsung Price
-		String Samsungp = CommonUtlities.pricecapture(POS.Samsungprice());
+		String Samsungp = com.pricecapture(POS.Samsungprice());
 		Double Samsungp4 = Double.parseDouble(Samsungp);
 		System.out.println(Samsungp4);//241.99
 		
 //Add to Cart
 		POS.Addsamsungtocart().click();
-		
-		com.waits(CartTotalPOM.clickontotal, 20);
+		Thread.sleep(3000);
 		
 //Total Cart price
 		CartTotalPOM POC = new CartTotalPOM(Driver);
-		CartTotalPOM.Clickontotal().click();
-		String Totalp1= CartTotalPOM.Gettotalprice().getText();
-		String Totalp2 = Totalp1.replace("$", "");
-		Double Totalp3 = Double.parseDouble(Totalp2);
-		System.out.println(Totalp3);
+		POC.Clickontotal().click();
+		String totalp = com.pricecapture(POC.Gettotalprice());
+		Double totalp4 = Double.parseDouble(totalp);
+		System.out.println(totalp4);
+		
 
 //Verification of Total Price
 		double Actualp = Iphonep4+Samsungp4;
-		if(Actualp == Totalp3) {
+		if(Actualp == totalp4) {
 			System.out.println("Total price vlaue verified");
 		}
 		Driver.close();

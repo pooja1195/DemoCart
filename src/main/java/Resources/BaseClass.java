@@ -1,7 +1,6 @@
 package Resources;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -22,6 +21,7 @@ public class BaseClass {
 	if (browsername.equalsIgnoreCase("chrome")) {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\LENOVO\\Desktop\\ChromeDriver\\chromedriver_win32\\chromedriver.exe");
 		Driver = new ChromeDriver();
+		Driver.get("https://naveenautomationlabs.com/opencart/");
 	}
 	else if (browsername.equalsIgnoreCase("edge")) {
 		//edge code
@@ -32,9 +32,5 @@ public class BaseClass {
 	}
 	}
 	
-	@BeforeMethod
-	public void app() {
-		String link = prop.getProperty("url");
-		Driver.get(link);
-	}
+	
 }
