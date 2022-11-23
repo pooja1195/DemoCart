@@ -5,11 +5,11 @@ import java.text.DecimalFormat;
 import java.time.Duration;
 import java.util.Arrays;
 
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import PageObjectModel.CartTotalPOM;
 import PageObjectModel.IphonePOM;
@@ -23,7 +23,6 @@ public class CartTotal extends BaseClass{
 	@Test
 	public void Cartprice() throws IOException, InterruptedException {
 		initializeDriver();
-		app();
 		
 //Iphone Code
 		IphonePOM POI = new IphonePOM(Driver);
@@ -68,7 +67,7 @@ public class CartTotal extends BaseClass{
 //Add to Cart
 		POS.Addsamsungtocart().click();
 		
-		com.waits(CartTotalPOM.clickontotal, 20);
+		Thread.sleep(2000);
 		
 //Total Cart price
 		CartTotalPOM POC = new CartTotalPOM(Driver);
