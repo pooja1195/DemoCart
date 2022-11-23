@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-13T19:54:23 IST" name="Default suite" finished-at="2022-11-13T19:54:51 IST" duration-ms="27693">
+  <suite started-at="2022-11-23T11:13:37 IST" name="Default suite" finished-at="2022-11-23T11:13:52 IST" duration-ms="15528">
     <groups>
     </groups>
-    <test started-at="2022-11-13T19:54:23 IST" name="Default test" finished-at="2022-11-13T19:54:51 IST" duration-ms="27693">
-      <class name="IphoneCart.AddIphone">
-        <test-method signature="IphoneinCart()[pri:0, instance:IphoneCart.AddIphone@6973b51b]" started-at="2022-11-13T19:54:23 IST" name="IphoneinCart" finished-at="2022-11-13T19:54:51 IST" duration-ms="27609" status="PASS">
+    <test started-at="2022-11-23T11:13:37 IST" name="Default test" finished-at="2022-11-23T11:13:52 IST" duration-ms="15528">
+      <class name="CartPriceVerify.CartTotal">
+        <test-method signature="Cartprice()[pri:0, instance:CartPriceVerify.CartTotal@5f058f00]" started-at="2022-11-23T11:13:37 IST" name="Cartprice" finished-at="2022-11-23T11:13:52 IST" duration-ms="15453" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- IphoneinCart -->
-      </class> <!-- IphoneCart.AddIphone -->
+        </test-method> <!-- Cartprice -->
+      </class> <!-- CartPriceVerify.CartTotal -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
